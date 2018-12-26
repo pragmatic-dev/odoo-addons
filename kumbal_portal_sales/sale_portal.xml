@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="kumbal_sale_order_portal_content_inherit_sale_management" name="Order Options" inherit_id="sale_management.sale_order_portal_content_inherit_sale_management">
+        <xpath expr="//section[@id='details']/table/thead/tr/th" postion="after">
+            <th class="text-right">Espiral</th>
+            <th class="text-right">Cant. Maxima Espiral</th>
+        </xpath>
+
+        <xpath expr="//section[@id='details']/table/tbody/t[@t-foreach]/tr/t[@t-if]/td" postion="after">
+            <td>
+                <div class="text-right" t-field="line.espiral"/>
+            </td>
+            <td>
+                <div class="text-right" t-field="line.cantidad_maxima_por_espiral"/>
+            </td>
+        </xpath>
+
+        <xpath expr="//section[@id='terms']" position="before">
+            <section>
+                <t t-if="sale_order.unprocessed_option_lines() &gt; 0">
+                    <a t-att-href="sale_order.get_portal_url(suffix='/add_all_options/')" class="btn btn-info" aria-label="Add all options" title="Adicionar Todos">
+                        Adicionar Todos
+                    </a>
+                </t>
+            </section>
+        </xpath>
+    </template>
+
+    <template id="kumbal_sale_order_portal_content_inherit_sale_management_2" name="Order Options" inherit_id="kumbal_sale_order_portal_content_inherit_sale_management">
+        <xpath expr="//t[@t-if]/section/table/thead/tr/th" position="after">
+            <th class="text-right">Espiral</th>
+            <th class="text-right">Cant. Maxima Espiral</th>
+        </xpath>
+    </template>
+
+    <template id="kumbal_sale_order_portal_content_inherit_sale_management_3" name="Order Options" inherit_id="kumbal_sale_order_portal_content_inherit_sale_management">
+        <xpath expr="//t[@t-if]/section/table/tbody/tr[@t-foreach]/t[@t-if]/td" position="after">
+            <td>
+                <div class="text-right" t-field="option.espiral"/>
+            </td>
+            <td>
+                <div class="text-right" t-field="option.cantidad_maxima_por_espiral"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_kumbal_portal_sales_kumbal_portal_sales,kumbal_portal_sales.kumbal_portal_sales,model_kumbal_portal_sales_kumbal_portal_sales,,1,0,0,0
